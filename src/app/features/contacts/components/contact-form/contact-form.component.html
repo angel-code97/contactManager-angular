@@ -1,0 +1,22 @@
+<h3 class="title-new-contact">Nuevo contacto</h3>
+
+@if (message()) {
+<p style="color: green">{{ message() }}</p>
+}
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div>
+    <label class="label-name">Nombre</label><br />
+    <input type="text" formControlName="name" />
+  </div>
+
+  <div>
+    <label class="label-phone">Teléfono</label><br />
+    <input type="number" formControlName="phone" />
+  </div>
+
+  <button class="button-submit" type="submit" [disabled]="form.invalid">Guardar</button>
+  @if(selectedContact()){
+  <button class="button-submit" (click)="cancelEdit()" type="button">Cancelar</button>
+  }
+</form>

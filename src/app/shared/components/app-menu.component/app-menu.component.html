@@ -1,0 +1,52 @@
+<section class="section-menu-footer">
+  <nav>
+    <a
+      class="menu-icon"
+      routerLink="/tasks"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      ><mat-icon
+        class="icons-actions"
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="home"
+      ></mat-icon>
+    </a>
+    <a
+      class="menu-icon"
+      routerLink="/tasks/category"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      ><mat-icon
+        class="icons-actions"
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="category"
+      ></mat-icon>
+    </a>
+    <a class="menu-icon add-link" routerLink="/tasks/create" routerLinkActive="active">
+      <mat-icon
+        aria-hidden="false"
+        class="add-icon"
+        aria-label="Example home icon"
+        fontIcon="add_circle"
+      ></mat-icon>
+    </a>
+    <a class="menu-icon" routerLink="/tasks/pending" routerLinkActive="active">
+      <mat-icon
+        class="icons-actions"
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="pending_actions"
+      ></mat-icon>
+    </a>
+    <a class="menu-icon" routerLink="/tasks/completed" routerLinkActive="active">
+      <mat-icon
+        class="icons-actions"
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="task"
+      ></mat-icon>
+    </a>
+  </nav>
+</section>

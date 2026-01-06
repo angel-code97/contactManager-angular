@@ -1,0 +1,10 @@
+.flex-contacts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: antiquewhite;
+  padding: 100px 10px;
+  border-radius: 15px;
+}

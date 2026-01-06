@@ -1,0 +1,39 @@
+.container-task-list {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgb(159, 199, 233);
+}
+
+.title-task-list {
+  margin: 15px 0;
+  font-size: 24px;
+}
+
+.description-task-list {
+  margin: 10px 0;
+  font-size: 16px;
+  color: rgb(114, 114, 114);
+}
+.div-category-task {
+  border: 1px solid red;
+}
+.category-task-list {
+}
+
+.container-buttons-task {
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.container-buttons-task button {
+  border: none;
+  background-color: #091140;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.category-task-list button:hover {
+  background-color: aqua;
+}

@@ -1,0 +1,20 @@
+<h3 class="title-contacts-list">Contactos</h3>
+
+@if (message()) {
+<p style="color: green">
+  {{ message() }}
+</p>
+} @if (contacts().length === 0) {
+<p>No hay contactos aún</p>
+} @else {
+<ul>
+  @for (contact of contacts(); let i = $index; track i) {
+  <li class="contact-list-info">
+    <strong>{{ contact.name }}</strong> — {{ contact.phone }}
+    <button (click)="edit(contact, i)">Editar</button>
+
+    <button (click)="remove(i)">Eliminar</button>
+  </li>
+  }
+</ul>
+}

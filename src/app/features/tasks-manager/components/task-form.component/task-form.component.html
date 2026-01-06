@@ -1,0 +1,49 @@
+<form class="add-task-form" [formGroup]="form" (ngSubmit)="submit()">
+  <mat-form-field class="add-task-full-width">
+    <mat-label>Titulo</mat-label>
+    <input type="text" matInput formControlName="title" placeholder="Titulo de la tarea..." />
+    @if (title.hasError('required') && title.touched) {
+    <mat-error>El título es obligatorio</mat-error>
+    } @if (title.hasError('minlength') && title.touched) {
+    <mat-error> El título debe tener al menos 4 caracteres </mat-error>
+    } @if (title.hasError('maxlength') && title.touched) {
+    <mat-error> El título no debe exceder 30 caracteres </mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field class="add-task-full-width">
+    <mat-label>Descripción</mat-label>
+    <textarea
+      formControlName="description"
+      name=""
+      matInput
+      id=""
+      rows="5"
+      placeholder="Descripcion de la tarea..."
+    ></textarea>
+    @if (description.hasError('minlength') && description.touched) {
+    <mat-error> El título debe tener al menos 4 caracteres </mat-error>
+    } @if (description.hasError('maxlength') && description.touched) {
+    <mat-error> El título no debe exceder 70 caracteres </mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field class="add-task-full-width">
+    <mat-label>Categoría</mat-label>
+
+    <mat-select formControlName="category">
+      @for (cat of categorys; track cat.value) {
+      <mat-option [value]="cat.value">
+        {{ cat.viewValue }}
+      </mat-option>
+      }
+    </mat-select>
+
+    @if (category.hasError('required') && category.touched) {
+    <mat-error>La categoría es obligatoria</mat-error>
+    }
+  </mat-form-field>
+  <div class="div-btn-submit">
+    <button class="button-submit" type="submit" [disabled]="form.invalid">Crear Tarea</button>
+  </div>
+</form>

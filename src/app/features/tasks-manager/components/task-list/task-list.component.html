@@ -1,0 +1,21 @@
+<h3>Tareas</h3>
+
+@if (tasksListInput().length === 0) {
+<p>Sin Tareas</p>
+}@else{
+<p>hay tareas</p>
+@for (task of tasksListInput(); let i = $index; track i) {
+<div class="container-task-list">
+  <div>
+    <h2 class="title-task-list">{{ task.title }}</h2>
+    <p class="description-task-list">{{ task.description }}</p>
+    <div class="div-category-task">
+      <p class="category-task-list">{{ task.category }}</p>
+    </div>
+    <div class="container-buttons-task">
+      <button (click)="editTask(task, i)">Editar</button>
+      <button (click)="deleteTask(i)">Eliminar</button>
+    </div>
+  </div>
+</div>
+} }

@@ -26,14 +26,14 @@ interface Category {
   styleUrl: './task-form.component.css',
 })
 export class TaskFormComponent {
-  // constructor() {
-  //   effect(() => {
-  //     const selected = this.taskService.selectedTask();
-  //     if (selected) {
-  //       this.form.patchValue(selected.task);
-  //     }
-  //   });
-  // }
+  constructor() {
+    effect(() => {
+      const selected = this.taskService.selectedTask();
+      if (selected) {
+        this.form.patchValue(selected.task);
+      }
+    });
+  }
 
   sendTask = output<TaskModel>();
 

@@ -19,7 +19,6 @@ export class TaskService {
   //funcion para agregar tarea
   addTask(task: TaskModel) {
     this.tasks_Signal.update((t) => [...t, task]);
-    console.log('tarea agregada al signal', this.tasks_Signal());
   }
 
   //funcion para eliminar tarea

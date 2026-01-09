@@ -5,6 +5,7 @@ import { TaskService } from '../../services/task.service';
 import { TaskModel } from '../../models/task.model';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogContent } from '../../../../shared/components/dialog-content/dialog-content';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-task-manager-page',
@@ -13,12 +14,18 @@ import { DialogContent } from '../../../../shared/components/dialog-content/dial
   styleUrl: './task-manager-page.component.css',
 })
 export class TaskManagerPageComponent {
+  private router = inject(Router);
   readonly dialog = inject(MatDialog);
 
   private route = inject(ActivatedRoute);
   private taskService = inject(TaskService);
 
   tasks = this.taskService.tasks();
+
+  select({ task, index }: { task: TaskModel; index: number }) {
+    this.taskService.selectTask(task, index);
+    this.router.navigate(['tasks/create']);
+  }
 
   deleteTask(i: number) {
     this.openDialog(i);

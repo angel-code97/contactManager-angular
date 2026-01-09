@@ -1,1 +1,5 @@
-<app-task-list [tasksListInput]="tasks()" (tasksDeleteOutput)="deleteTask($event)"></app-task-list>
+<app-task-list
+  [tasksListInput]="tasks()"
+  (tasksDeleteOutput)="deleteTask($event)"
+  (tasksEditOutput)="select($event)"
+></app-task-list>
